@@ -1,0 +1,46 @@
+---
+title: 'Creating a Sprite'
+description: 'Creating your first Sprite'
+---
+
+## Create your Sprite Variable
+
+First create your sprite variable by pasting this code into your `example.js` file:
+
+```javascript example.js
+const firstSprite = new Sprite()
+```
+
+Then add all the nessasary parameters into the sprite (Ex: Xpos and Ypos) by inputing the values
+into the `firstSprite` variable.
+
+```javascript example.js
+"path-to-your-image", width, height, xpos, ypos, id
+```
+
+Once you are done with that your line should look something like this:
+
+```javascript example.js
+const firstSprite = new Sprite("path-to-your-image", width, height, xpos, ypos, id);
+```
+
+## Draw your Sprite to the canvas
+
+To draw your newly created sprite onto the canvas you will need to go to your gameLoop which should look  something like this:
+
+```javascript example.js 
+function gameLoop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    requestAnimationFrame(gameLoop);
+}
+```
+
+You will draw your sprite in this functon, 
+you should do that by adding this code between the `ctx.clearRect()` and `requestAnimationFrame()` parts.
+
+```javascript example.js
+firstSprite.draw(ctx);
+```
+
+Now if you view your `index.html` file in a browser it should show your sprite.
